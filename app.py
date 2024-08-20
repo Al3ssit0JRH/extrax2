@@ -30,7 +30,7 @@ def modificables():
 # Ruta para la página de inicio de sesión
 @app.route('/iniciarSesion')
 def iniciar_sesion():
-    return render_template('iniciar_sesion.html')
+    return render_template('modificables.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
