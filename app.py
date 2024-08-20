@@ -33,7 +33,7 @@ def iniciar_sesion():
     return render_template('iniciar_sesion.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         usuario = request.form['usuario']
