@@ -1,0 +1,196 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #111;
+}
+
+/* Encabezado */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el contenido a los extremos */
+}
+
+header .logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+header .logo img {
+    max-width: 100px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    margin-left: 120px; /* Ajusta el margen izquierdo para que no choque con el logo */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #f4a460;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+/* Banner */
+#banner {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Ajusta según sea necesario */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Aumenta la opacidad para mejor contraste */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner-content h2 {
+    margin: 0;
+    font-size: 2.5em; /* Aumentado para mejorar visibilidad */
+}
+
+.banner-content p {
+    margin: 10px 0 0;
+    font-size: 1.2em; /* Aumentado para mejor legibilidad */
+}
+
+/* Sección Inicio */
+#inicio {
+    background: #292929;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+}
+
+#inicio h2 {
+    color: #f4a460;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #f4a460;
+    padding-bottom: 10px;
+}
+
+#inicio p {
+    color: #e0e0e0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#inicio iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+/* Otras secciones */
+section {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #1f1f1f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    color: #f4a460;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #f4a460;
+    padding-bottom: 10px;
+}
+
+section h3 {
+    color: #f4a460;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.equipo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.miembro img {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 5px solid #f4a460;
+}
+
+.contacto {
+    margin-top: 10px;
+    color: #f4a460;
+}
+
+/* Pie de página */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}

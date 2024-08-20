@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Servidores</title>
+    <style>
+        .formulario {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .formulario h3 {
+            margin-top: 0;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Servidores</h1>
+
+    <!-- Formulario para buscar un servidor -->
+    <form id="buscarServidorForm" action="/buscar_servidor" method="POST" class="formulario">
+        <h3>Buscar servidor</h3>
+        <label for="numero_rack">Número de Rack</label>
+        <input type="text" id="numero_rack" name="numero_rack" required>
+        <button type="button" id="buscarServidorBtn" class="btn">Buscar</button>
+        <div id="resultadoBusqueda"></div>
+    </form>
+
+    <!-- Formulario para modificar un servidor -->
+    <form id="modificarServidorForm" action="/modificar_servidor" method="POST" class="formulario">
+        <h3>Modificar servidor</h3>
+        <label for="nombre_servidor_modificar">Nombre del Servidor</label>
+        <input type="text" id="nombre_servidor_modificar" name="nombre_servidor_modificar" required>
+        <label for="capacidad_almacenamiento_modificar">Capacidad de Almacenamiento</label>
+        <input type="text" id="capacidad_almacenamiento_modificar" name="capacidad_almacenamiento_modificar" required>
+        <label for="sistema_operativo_modificar">Sistema Operativo</label>
+        <input type="text" id="sistema_operativo_modificar" name="sistema_operativo_modificar" required>
+        <label for="seguridad_modificar">Seguridad</label>
+        <input type="text" id="seguridad_modificar" name="seguridad_modificar" required>
+        <label for="estado_modificar">Estado</label>
+        <input type="text" id="estado_modificar" name="estado_modificar" required>
+        <label for="temperatura_modificar">Temperatura</label>
+        <input type="text" id="temperatura_modificar" name="temperatura_modificar" required>
+        <label for="hora_respaldo_modificar">Hora de Respaldo</label>
+        <input type="text" id="hora_respaldo_modificar" name="hora_respaldo_modificar" required>
+        <button type="button" id="modificarServidorBtn" class="btn">Modificar</button>
+        <div id="resultadoModificacion"></div>
+    </form>
+
+    <!-- Formulario para eliminar un servidor -->
+    <form id="eliminarServidorForm" action="/eliminar_servidor" method="POST" class="formulario">
+        <h3>Eliminar servidor</h3>
+        <label for="nombre_servidor_eliminar">Nombre del Servidor</label>
+        <input type="text" id="nombre_servidor_eliminar" name="nombre_servidor_eliminar" required>
+        <button type="button" id="eliminarServidorBtn" class="btn">Eliminar</button>
+        <div id="resultadoEliminacion"></div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Funcionalidad para buscar servidor
+            document.getElementById('buscarServidorBtn').addEventListener('click', function () {
+                const buscar = document.getElementById('numero_rack').value;
+
+                fetch('/buscar_servidor', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({ buscar: buscar })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        document.getElementById('resultadoBusqueda').innerHTML = `<p>${data.message}</p>`;
+                    } else {
+                        // Llenar el formulario de modificación con los datos obtenidos
+                        document.getElementById('nombre_servidor_modificar').value = data.nombre_servidor;
+                        document.getElementById('capacidad_almacenamiento_modificar').value = data.capacidad_almacenamiento;
+                        document.getElementById('sistema_operativo_modificar').value = data.sistema_operativo;
+                        document.getElementById('seguridad_modificar').value = data.seguridad;
+                        document.getElementById('estado_modificar').value = data.estado;
+                        document.getElementById('temperatura_modificar').value = data.temperatura;
+                        document.getElementById('hora_respaldo_modificar').value = data.hora_respaldo;
+                    }
+                });
+            });
+
+            // Funcionalidad para modificar servidor
+            document.getElementById('modificarServidorBtn').addEventListener('click', function () {
+                const form = document.getElementById('modificarServidorForm');
+                const modificar = new URLSearchParams(new FormData(form));
+
+                fetch('/modificar_servidor', {
+                    method: 'POST',
+                    body: modificar
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('resultadoModificacion').innerHTML = `<p>${data.message}</p>`;
+                });
+            });
+
+            // Funcionalidad para eliminar servidor
+            document.getElementById('eliminarServidorBtn').addEventListener('click', function () {
+                const eliminar = document.getElementById('nombre_servidor_eliminar').value;
+
+                fetch('/eliminar_servidor', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({ nombre_servidor_eliminar: eliminar })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('resultadoEliminacion').innerHTML = `<p>${data.message}</p>`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

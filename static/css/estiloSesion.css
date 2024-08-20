@@ -1,0 +1,73 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del Formulario */
+.login-container {
+    background: #292929;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #f4a460;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f4a460;
+    font-size: 1.2em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #f4a460;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #f4a460;
+    border: none;
+    border-radius: 5px;
+    color: #111;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e58e38;
+}

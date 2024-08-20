@@ -1,0 +1,127 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea los elementos al principio para evitar recortes */
+    height: 100vh;
+    overflow: auto; /* Permite el desplazamiento si es necesario */
+}
+
+/* Contenedor principal */
+.login-container {
+    background: #292929;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre columnas */
+    box-sizing: border-box;
+}
+
+/* Título principal */
+.login-container h2 {
+    color: #f4a460;
+    font-size: 2.5em;
+    margin: 0 0 20px;
+    text-align: center;
+    width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+}
+
+/* Contenedor para columnas de formularios */
+.form-column {
+    flex: 1;
+    min-width: 300px; /* Ancho mínimo para cada columna */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre formularios en la misma columna */
+}
+
+/* Estilos para cada formulario */
+.formulario {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Títulos de los formularios */
+.formulario h3 {
+    color: #f4a460;
+    font-size: 1.8em;
+    margin: 0 0 15px;
+}
+
+/* Etiquetas y campos de entrada */
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f4a460;
+    font-size: 1.2em;
+}
+
+.formulario input,
+.formulario select {
+    width: calc(100% - 22px); /* Ajusta el ancho para compensar el padding y el borde */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    box-shadow: 0 0 5px #f4a460;
+}
+
+/* Estilo para el botón */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #f4a460;
+    border: none;
+    border-radius: 5px;
+    color: #111;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.btn:hover {
+    background: #e58e38;
+}
+
+/* Estilo para el botón de regreso */
+.boton-regreso a {
+    display: inline-block;
+    padding: 10px;
+    background: #f4a460; /* Mismo color que los botones */
+    border: none;
+    border-radius: 5px;
+    color: #111;
+    font-size: 1.2em;
+    text-decoration: none; /* Elimina el subrayado */
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.boton-regreso a:hover {
+    background: #e58e38;
+}

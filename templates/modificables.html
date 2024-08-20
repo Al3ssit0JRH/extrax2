@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Servidores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloModificables.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Gestión de Servidores</h2>
+
+        <div class="form-column">
+
+            <!-- Formulario para buscar un servidor -->
+            <form id="buscarServidorForm" class="formulario">
+                <h3>Buscar servidor</h3>
+                <label for="numero_rack">Número de Rack</label>
+                <input type="text" id="numero_rack" name="numero_rack" required>
+                <button type="submit" id="buscarServidorBtn" class="btn">Buscar</button>
+                <div id="resultadoBusqueda"></div>
+            </form>
+
+
+
+            <!-- Formulario para eliminar un servidor -->
+            <form id="eliminarServidorForm" action="/eliminar_servidor" method="POST" class="formulario">
+                <h3>Eliminar servidor</h3>
+                <label for="nombre_servidor_eliminar">Nombre del Servidor</label>
+                <input type="text" id="nombre_servidor_eliminar" name="nombre_servidor_eliminar" required>
+                <button type="submit" id="eliminarServidorBtn" class="btn">Eliminar</button>
+
+                <div id="resultadoEliminacion"></div>
+            </form>
+
+        </div>
+
+
+
+
+
+        <div class="form-column">
+
+            <!-- Formulario para insertar un servidor -->
+            <form id="insertarServidorForm" method="POST" class="formulario">
+                <h3>Insertar servidor</h3>
+                <label for="nombre_servidor_insertar">Nombre del Servidor</label>
+                <input type="text" id="nombre_servidor_insertar" name="nombre_servidor_insertar" required>
+
+                <label for="numero_rack_insertar">Número de Rack</label>
+                <input type="text" id="numero_rack_insertar" name="numero_rack_insertar" required>
+
+                <label for="capacidad_almacenamiento_insertar">Capacidad de Almacenamiento</label>
+                <input type="text" id="capacidad_almacenamiento_insertar" name="capacidad_almacenamiento_insertar" required>
+
+                <label for="sistema_operativo_insertar">Sistema Operativo</label>
+                <input type="text" id="sistema_operativo_insertar" name="sistema_operativo_insertar" required>
+
+                <label for="seguridad_insertar">Seguridad</label>
+                <input type="text" id="seguridad_insertar" name="seguridad_insertar" required>
+
+                <label for="estado_insertar">Estado (Activo/Inactivo)</label>
+                <select id="estado_insertar" name="estado_insertar" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+
+                <label for="temperatura_insertar">Temperatura</label>
+                <input type="text" id="temperatura_insertar" name="temperatura_insertar" required>
+
+                <label for="hora_respaldo_insertar">Hora de Activación del Respaldo</label>
+                <input type="time" id="hora_respaldo_insertar" name="hora_respaldo_insertar" required>
+
+                <button type="button" id="insertarServidorBtn" class="btn">Insertar</button>
+                <div id="resultadoInsercion"></div>
+            </form>
+
+
+
+
+
+             <!-- Formulario para modificar un servidor -->
+            <form id="modificarServidorForm" method="POST" class="formulario">
+                <h3>Modificar servidor</h3>
+                <label for="nombre_servidor_modificar">Nombre del Servidor</label>
+                <input type="text" id="nombre_servidor_modificar" name="nombre_servidor_modificar" required>
+
+                <label for="capacidad_almacenamiento_modificar">Capacidad de Almacenamiento</label>
+                <input type="text" id="capacidad_almacenamiento_modificar" name="capacidad_almacenamiento_modificar" required>
+
+                <label for="sistema_operativo_modificar">Sistema Operativo</label>
+                <input type="text" id="sistema_operativo_modificar" name="sistema_operativo_modificar" required>
+
+                <label for="seguridad_modificar">Seguridad</label>
+                <input type="text" id="seguridad_modificar" name="seguridad_modificar" required>
+
+                <label for="estado_modificar">Estado (Activo/Inactivo)</label>
+                <select id="estado_modificar" name="estado_modificar" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+
+                <label for="temperatura_modificar">Temperatura</label>
+                <input type="text" id="temperatura_modificar" name="temperatura_modificar" required>
+
+                <label for="hora_respaldo_modificar">Hora de Activación del Respaldo</label>
+                <input type="time" id="hora_respaldo_modificar" name="hora_respaldo_modificar" required>
+
+                <button type="button" id="modificarServidorBtn" class="btn">Modificar</button>
+                <div id="resultadoModificacion"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botón de regreso -->
+    <div class="boton-regreso">
+        <a href="/">Regresar</a>
+    </div>
+</body>
+</html>
