@@ -24,7 +24,7 @@ def index():
 # Ruta para la página de modificables
 @app.route('/modificables')
 def modificables():
-    return render_template('modificables.html')
+    return render_template('iniciar_sesion.html')
 
 
 # Ruta para la página de inicio de sesión
