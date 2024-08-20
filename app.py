@@ -6,15 +6,15 @@ app = Flask(__name__, static_folder="static")
 app.secret_key = 'alex123'
 
 
+# Conectar a la base de datos
 def conectar_db():
-    uri = "mongodb+srv://username:password@cluster.mongodb.net/ProyectoCaso"
+    uri = "mongodb+srv://23301224:20301224@junior.52vo42c.mongodb.net/ProyectoCaso"
     try:
         client = MongoClient(uri)
+        client.list_database_names()
         return client['ProyectoCaso']
     except PyMongoError as e:
-        app.logger.error(f"Error de conexión a la base de datos: {e}")
-        return None
-
+        return {'message': f"Error de conexión a la base de datos: {str(e)}"}
 
 # Ruta principal
 @app.route('/')
