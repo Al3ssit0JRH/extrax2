@@ -24,13 +24,13 @@ def index():
 # Ruta para la página de modificables
 @app.route('/modificables')
 def modificables():
-    return render_template('iniciar_sesion.html')
+    return render_template('modificables.html')
 
 
 # Ruta para la página de inicio de sesión
 @app.route('/iniciarSesion')
 def iniciar_sesion():
-    return render_template('modificables.html')
+    return render_template('iniciar_sesion.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
