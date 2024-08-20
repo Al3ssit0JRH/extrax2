@@ -22,11 +22,6 @@ def conectar_db():
 def index():
     return render_template('index.html')
 
-
-@app.route('/eje')
-def eje():
-    return render_template('ejemplo.html')
-
 # Ruta para la página de modificables
 @app.route('/modificables')
 def modificables():
@@ -34,7 +29,7 @@ def modificables():
 
 
 # Ruta para la página de inicio de sesión
-@app.route('/iniSes')
+@app.route('/iniciarSesion')
 def iniciar_sesion():
     return render_template('iniciar_sesion.html')
 
