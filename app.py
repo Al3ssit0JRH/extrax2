@@ -160,4 +160,4 @@ def eliminar_servidor():
         return jsonify({'message': 'No se encontró el servidor'})
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=2000, debug=True)
+    app.run(debug=True)
