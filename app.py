@@ -28,7 +28,7 @@ def modificables():
 
 
 # Ruta para la página de inicio de sesión
-@app.route('/iniciarSesion')
+@app.route('/iniciarsesion')
 def iniciar_sesion():
     return render_template('iniciar_sesion.html')
 
